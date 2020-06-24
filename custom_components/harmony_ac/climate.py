@@ -291,6 +291,8 @@ class HarmonyIRClimate(ClimateEntity, RestoreEntity):
 
         if operation_mode.lower() == HVAC_MODE_OFF:
             command = 'Off'
+        elif operation_mode.lower() == HVAC_MODE_FAN_ONLY:
+            command = "Fan" + fan_mode.capitalize()
         else:
             command = operation_mode.capitalize() + fan_mode.capitalize() + target_temperature.capitalize()
 
